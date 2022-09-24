@@ -65,4 +65,24 @@ plt.title("TSLA")
 plt.savefig('charts/tsla.png')
 plt.show()
 
+#Create MCD chart
+datamcd = yf.download("MCD", start="2022-08-30", end="2022-09-14")
+
+mcdPrices = []
+
+for price in datamcd['Adj Close']:
+    mcdPrices.append(price)
+
+print(mcdPrices)
+
+mcdarray = np.array(mcdPrices)
+plt.plot(mcdarray)
+plt.title("MCD")
+
+# show the graph
+
+
+plt.savefig('charts/mcd.png')
+plt.show()
+
 
