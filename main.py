@@ -28,21 +28,41 @@ plt.show()
 #Create AAPL chart
 dataAAPL = yf.download("AAPL", start="2022-08-30", end="2022-09-14")
 
-AAPLPrices = []
+aaplPrices = []
 
 for price in dataAAPL['Adj Close']:
-    AAPLPrices.append(price)
+    aaplPrices.append(price)
 
-print(AAPLPrices)
+print(aaplPrices)
 
-AAPLarray = np.array(AAPLPrices)
-plt.plot(AAPLarray)
+aaplarray = np.array(aaplPrices)
+plt.plot(aaplarray)
 plt.title("AAPL")
 
 # show the graph
 
 
 plt.savefig('charts/aapl.png')
+plt.show()
+
+#Create TSLA chart
+dataTSLA = yf.download("TSLA", start="2022-08-30", end="2022-09-14")
+
+TSLAPrices = []
+
+for price in dataTSLA['Adj Close']:
+    TSLAPrices.append(price)
+
+print(TSLAPrices)
+
+TSLAarray = np.array(TSLAPrices)
+plt.plot(TSLAarray)
+plt.title("TSLA")
+
+# show the graph
+
+
+plt.savefig('charts/tsla.png')
 plt.show()
 
 
