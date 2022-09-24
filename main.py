@@ -2,6 +2,7 @@
 # Colton Ensz
 # Mini Project 1
 
+from tkinter import W
 import yfinance as yf
 import numpy as np
 import matplotlib.pyplot as plt
@@ -85,4 +86,24 @@ plt.title("MCD")
 plt.savefig('charts/mcd.png')
 plt.show()
 
+
+#Create WMT chart
+datawmt = yf.download("WMT", start="2022-08-30", end="2022-09-14")
+
+wmtPrices = []
+
+for price in datawmt['Adj Close']:
+    wmtPrices.append(price)
+
+print(wmtPrices)
+
+wmtarray = np.array(wmtPrices)
+plt.plot(wmtarray)
+plt.title("WMT")
+
+# show the graph
+
+
+plt.savefig('charts/wmt.png')
+plt.show()
 
